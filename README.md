@@ -3,312 +3,216 @@
 [![Java](https://img.shields.io/badge/Java-11%2B-orange)](https://openjdk.org/)
 [![Maven](https://img.shields.io/badge/Maven-3.6%2B-blue)](https://maven.apache.org/)
 [![Karate](https://img.shields.io/badge/Karate-1.4.1-green)](https://github.com/karatelabs/karate)
-[![JUnit 5](https://img.shields.io/badge/JUnit-5.9.2-yellow)](https://junit.org/junit5/)
 
-This project implements BDD (Behavior Driven Development) testing for an Inventory API using Karate framework with Java and Maven.
+Comprehensive BDD testing suite for an Inventory API using Karate framework with Java and Maven.
 
-## 📋 Table of Contents
-
-- [Project Structure](#-project-structure)
-- [Prerequisites](#-prerequisites)
-- [API Configuration](#-api-configuration)
-- [Test Scenarios Covered](#-test-scenarios-covered)
-- [Building the Project](#-building-the-project)
-- [Running the Tests](#-running-the-tests)
-- [Configuration Options](#-configuration-options)
-- [Test Reports](#-test-reports)
-- [Troubleshooting](#-troubleshooting)
-- [Continuous Integration](#-continuous-integration)
-- [Contributing](#-contributing)
-- [Dependencies](#-dependencies)
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 home-test-api/
-├── pom.xml                                    # Maven configuration with Karate dependencies
-├── README.md                                  # This file
-├── src/
-│   └── test/
-│       ├── java/
-│       │   └── com/hometest/api/
-│       │       └── InventoryApiTest.java      # JUnit 5 test runner
-│       └── resources/
-│           ├── application.properties         # Test application configuration
-│           ├── features/
-│           │   └── inventory-api.feature      # Gherkin test scenarios
-│           ├── karate-config.js               # Karate configuration
-│           └── test-data.json                 # Test data for scenarios
-└── target/                                    # Generated after build
-    ├── karate-reports/                        # HTML test reports
-    ├── surefire-reports/                      # JUnit XML reports
-    └── test-classes/                          # Compiled test classes
+├── pom.xml                                           # Maven configuration
+├── src/test/
+│   ├── java/com/hometest/api/
+│   │   └── InventoryApiTest.java                     # JUnit 5 test runner
+│   └── resources/
+│       ├── features/                                 # Feature files
+│       │   ├── inventory-add-success.feature         # Successful item addition
+│       │   ├── inventory-add-validation.feature      # Validation error cases
+│       │   └── inventory-retrieval.feature           # Item retrieval operations
+│       ├── test-data/                                # Test data files
+│       │   ├── add-success-test-data.json            # Success scenario data
+│       │   ├── add-validation-test-data.json         # Validation test data
+│       │   └── retrieval-test-data.json              # Retrieval test data
+│       ├── karate-config.js                          # Global configuration
+│       └── application.properties                    # Application settings
+└── target/karate-reports/                            # Generated HTML reports
 ```
 
-## ⚡ Prerequisites
+## Prerequisites
 
-- **Java 11 or higher** - Download from [OpenJDK](https://openjdk.org/install/) or [Oracle](https://www.oracle.com/java/technologies/downloads/)
-- **Maven 3.6+** - Download from [Apache Maven](https://maven.apache.org/download.cgi)
-- **IntelliJ IDEA** (recommended) - Download from [JetBrains](https://www.jetbrains.com/idea/) - Community Edition is sufficient
-- **Git** (optional) - For version control
+- **Java 11+** - [Download](https://openjdk.org/install/)
+- **Maven 3.6+** - [Download](https://maven.apache.org/download.cgi)
+- **Running API Server** - Ensure your Inventory API is running on `http://localhost:3100`
+- **IntelliJ IDEA** (recommended) - [Download](https://www.jetbrains.com/idea/)
 
-### ✅ Verify installations:
+Verify installations:
 ```bash
 java -version
 mvn -version
 ```
 
-## ⚙️ API Configuration
+## Configuration
 
-Before running the tests, update the base URL in `src/test/resources/karate-config.js`:
+The API base URL is configured in `src/test/resources/karate-config.js`:
 
 ```javascript
-// Update these URLs to point to your actual API endpoints
-if (env == 'dev') {
-  config.baseUrl = 'http://localhost:3100/';  // Replace with your API URL
+var config = {
+  env: env,
+  baseUrl: 'http://localhost:3100/',  // Update with your API URL
+  timeout: 30000
 }
 ```
 
-## 🧪 Test Scenarios Covered
+## Test Features
 
-The test suite validates the following API endpoints and scenarios:
+### 🟢 **Inventory Retrieval Tests** (`inventory-retrieval.feature`)
+- **Get all menu items**: Validates inventory structure and required fields
+- **Filter by specific ID**: Tests ID-based filtering functionality  
+- **Validate specific expected item**: Confirms "Classic Muzzarella" item exists with exact data
 
-### 1. **Get All Menu Items** 📋
-- **Endpoint**: `GET /api/inventory`
-- **Validations**:
-  - Response contains at least 9 items
-  - Each item has required fields: `id`, `name`, `price`, `image`
+### ✅ **Add Item Success Tests** (`inventory-add-success.feature`)
+- **Add item with random ID and verify**: Complete end-to-end test that adds an item with random ID and validates it appears in inventory
 
-### 2. **Filter by ID** 🔍
-- **Endpoint**: `GET /api/inventory/filter?id=3`
-- **Validations**:
-  - Returns correct item data for "Baked Rolls x 8"
-  - Validates all required fields are present
+### ❌ **Add Item Validation Tests** (`inventory-add-validation.feature`)
+- **Duplicate item rejection**: Ensures API rejects duplicate IDs
+- **Missing field validation**: Tests all required fields (ID, name, price, image)
+- **Comprehensive error handling**: Covers all validation scenarios
 
-### 3. **Add New Item (Success)** ✅
-- **Endpoint**: `POST /api/inventory/add`
-- **Body**: `{"id": "10", "name": "Hawaiian", "image": "hawaiian.png", "price": "$14"}`
-- **Validation**: Status code 200
+## Test Data Organization
 
-### 4. **Add Existing Item (Failure)** ❌
-- **Endpoint**: `POST /api/inventory/add`
-- **Body**: Same as above (duplicate ID)
-- **Validation**: Status code 400
+| File | Purpose | Content |
+|------|---------|---------|
+| `add-success-test-data.json` | Success scenarios | Valid item template for addition |
+| `add-validation-test-data.json` | Error scenarios | Duplicate items, incomplete data |
+| `retrieval-test-data.json` | Retrieval tests | Expected item data, filter parameters |
 
-### 5. **Add Item with Missing Data** ⚠️
-- **Endpoint**: `POST /api/inventory/add`
-- **Scenarios**: Missing `id`, `name`, `price`, or `image`
-- **Validations**:
-  - Status code 400
-  - Response contains "Not all requirements are met"
+## Quick Start
 
-### 6. **Verify Added Item in Inventory** ✔️
-- **Endpoint**: `GET /api/inventory`
-- **Validation**: Confirms the Hawaiian item was successfully added with correct data
+1. **Ensure API server is running** on `http://localhost:3100`
 
-## 🔨 Building the Project
-
-1. **Clone or navigate to the project directory**:
-```bash
-cd home-test-api
-```
-
-2. **Download dependencies**:
+2. **Build project**:
 ```bash
 mvn clean compile
 ```
 
-3. **Compile test classes**:
-```bash
-mvn test-compile
-```
-
-## 🚀 Running the Tests
-
-### Run All Tests
+3. **Run all tests**:
 ```bash
 mvn test
 ```
 
-### Run Tests with Specific Environment
+4. **View results**: Open `target/karate-reports/karate-summary.html`
+
+## Running Tests
+
+### Basic Commands
 ```bash
-# For development environment
-mvn test -Dkarate.env=dev
-
-# For QA environment
-mvn test -Dkarate.env=qa
-
-# For production environment
-mvn test -Dkarate.env=prod
-```
-
-### Run Tests with Custom Base URL
-```bash
-mvn test -DbaseUrl=https://your-custom-api-url.com
-```
-
-### Run with Detailed Output
-```bash
-mvn test -Dkarate.options="--tags ~@ignore" -X
-```
-
-### Generate HTML Test Report
-```bash
+# Run all tests
 mvn test
-```
-The HTML report will be generated in `target/karate-reports/karate-summary.html`
 
-## 🎛️ Karate Options
+# Run with custom URL
+mvn test -DbaseUrl=https://your-api-url.com
 
-### Running Specific Scenarios
-Add tags to scenarios in the feature file and run:
-```bash
-mvn test -Dkarate.options="--tags @smoke"
-```
-
-### Parallel Execution
-For faster execution with multiple threads:
-```bash
+# Run with parallel execution
 mvn test -Dkarate.options="--threads 5"
+
+# Run specific feature
+mvn test -Dkarate.options="classpath:features/inventory-add-success.feature"
 ```
 
-## ⚙️ Configuration Options
+### Test Execution Flow
 
-### Environment Variables
-Set these in your environment or pass as system properties:
+1. **Background setup** runs for each scenario (URL, headers, test data loading)
+2. **Success tests** add items with random IDs and verify retrieval
+3. **Validation tests** ensure proper error handling for invalid data
+4. **Retrieval tests** validate existing inventory items and filtering
 
-- `karate.env` - Environment (dev/qa/prod)
-- `baseUrl` - API base URL override
-- `karate.options` - Additional Karate options
+## Reports
 
-### karate-config.js Settings
-- **Timeouts**: Connection and read timeouts (default: 30 seconds)
-- **Headers**: Default Content-Type and other headers
-- **Environment URLs**: Different base URLs per environment
+After running tests, comprehensive reports are generated:
 
-### Test Data Configuration
-The `test-data.json` file contains sample data used in test scenarios. You can modify this file to customize test data for your specific API requirements.
+- **📊 HTML Report**: `target/karate-reports/karate-summary.html` (recommended)
+- **📈 Timeline Report**: `target/karate-reports/karate-timeline.html`
+- **🏷️ Tags Report**: `target/karate-reports/karate-tags.html`
+- **📁 JSON Report**: `target/karate-reports/karate-summary.json`
+- **🧪 JUnit XML**: `target/surefire-reports/`
 
-## 📊 Test Reports
+## Key Features
 
-After running tests, you can access various types of reports:
+### 🎯 **Dynamic Test Data**
+- Random ID generation for unique test items
+- Template-based data with variable substitution
+- Organized JSON test data files
 
-### HTML Reports (Recommended) 🌐
-- **Location**: `target/karate-reports/karate-summary.html`
-- **Features**: Interactive timeline, detailed scenario results, screenshots
-- **Access**: Open in any web browser
+### 🔍 **Comprehensive Validation**
+- Exact field matching with expected values
+- Array filtering and item verification
+- Proper error status code validation (200, 400)
 
-### JSON Reports 📄
-- **Location**: `target/karate-reports/karate-summary.json`
-- **Use**: For CI/CD integration and custom reporting
+### 📝 **Detailed Logging**
+- Step-by-step execution logs
+- Data transformation tracking
+- Clear success/failure indicators
 
-### JUnit XML Reports 📋
-- **Location**: `target/surefire-reports/`
-- **Use**: For Maven Surefire plugin and CI/CD systems
+## API Endpoints Tested
 
-### Console Output 💻
-- Real-time test execution logs with pass/fail status
+| Method | Endpoint | Purpose | Scenarios |
+|--------|----------|---------|-----------|
+| `GET` | `/api/inventory` | Retrieve all items | 3 scenarios |
+| `GET` | `/api/inventory/filter?id={id}` | Filter by ID | 1 scenario |
+| `POST` | `/api/inventory/add` | Add new item | 6 scenarios |
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
-1. **Connection Timeout** ⏱️:
-   - Increase timeout in `karate-config.js`
-   - Check if API URL is accessible
-   ```javascript
-   configure.connectTimeout = 60000;
-   configure.readTimeout = 60000;
-   ```
+**❌ API Server Not Running**:
+```bash
+# Start your API server first
+docker-compose up -d  # or your server start command
+```
 
-2. **SSL Certificate Issues** 🔒:
-   ```bash
-   mvn test -Dkarate.options="--ssl false"
-   ```
+**❌ Connection timeout**:
+```javascript
+// In karate-config.js
+karate.configure('connectTimeout', 60000);
+karate.configure('readTimeout', 60000);
+```
 
-3. **Maven Dependencies** 📦:
-   ```bash
-   mvn dependency:resolve
-   mvn clean install
-   ```
+**❌ Test data not found**:
+```bash
+# Verify test data files exist
+ls -la src/test/resources/test-data/
+```
 
-4. **Java Version Issues** ☕:
-   - Ensure Java 11+ is installed and JAVA_HOME is set correctly
-   ```bash
-   echo $JAVA_HOME  # On Unix/Mac
-   echo %JAVA_HOME% # On Windows
-   ```
+**❌ Build issues**:
+```bash
+mvn clean
+mvn dependency:resolve
+mvn test
+```
 
-### Debug Mode 🐛
-Run with debug information:
+**🐛 Debug mode**:
 ```bash
 mvn test -Dkarate.options="--debug" -X
 ```
 
-### Clean Build 🧹
-If you encounter build issues:
-```bash
-mvn clean
-mvn clean compile test-compile
-mvn test
-```
-
-## 🔄 Continuous Integration
-
-For CI/CD pipelines, use:
-```bash
-mvn clean test -Dkarate.env=qa -Dmaven.test.failure.ignore=false
-```
-
-### Jenkins/GitHub Actions Example
-```yaml
-- name: Run API Tests
-  run: |
-    mvn clean test -Dkarate.env=qa
-    
-- name: Publish Test Results
-  uses: dorny/test-reporter@v1
-  if: success() || failure()
-  with:
-    name: Karate Tests
-    path: target/surefire-reports/*.xml
-    reporter: java-junit
-```
-
-## 🤝 Contributing
-
-1. Add new test scenarios to `src/test/resources/features/inventory-api.feature`
-2. Update test data in `src/test/resources/test-data.json` if needed
-3. Update base URLs in `karate-config.js` as needed
-4. Run tests locally before committing:
-   ```bash
-   mvn clean test
-   ```
-5. Ensure all tests pass in the target environment
-6. Update documentation for new features
-
-## 📦 Dependencies
+## Dependencies
 
 | Dependency | Version | Purpose |
 |------------|---------|---------|
-| **Karate** | 1.4.1 | BDD testing framework |
-| **JUnit 5** | 5.9.2 | Test runner |
-| **Maven Surefire** | 3.0.0-M9 | Test execution plugin |
+| Karate JUnit 5 | 1.4.1 | BDD testing framework |
+| JUnit Platform | 1.9.2 | Test platform |
+| Maven Surefire | 3.0.0-M9 | Test execution |
 
-## 📞 Support
+## Contributing
 
-For issues or questions:
+1. **Add new scenarios** to appropriate feature files in `src/test/resources/features/`
+2. **Update test data** in `src/test/resources/test-data/` JSON files
+3. **Run tests**: `mvn clean test`
+4. **Verify all tests pass** before committing
+5. **Update documentation** if adding new test categories
 
-1. **Check Test Reports**: Review the HTML report in `target/karate-reports/karate-summary.html`
-2. **Console Logs**: Check detailed error messages in console output
-3. **API Accessibility**: Verify API endpoints are accessible and responding
-4. **Documentation**: Review [Karate Documentation](https://github.com/karatelabs/karate)
-5. **Issues**: Create an issue in this repository with:
-   - Error message
-   - Test scenario that failed
-   - Environment details
-   - Steps to reproduce
+## Best Practices
 
----
+- ✅ Use descriptive scenario names
+- ✅ Organize test data in separate JSON files
+- ✅ Add comprehensive logging for debugging
+- ✅ Validate both success and error cases
+- ✅ Use random data for uniqueness when needed
 
-**Happy Testing! 🎉**
+## Support
+
+- [Karate Documentation](https://github.com/karatelabs/karate)
+- [Karate Examples](https://github.com/karatelabs/karate/tree/master/examples)
+- Check HTML reports for detailed test results
+- Verify API endpoints are accessible at configured base URL

@@ -1,0 +1,30 @@
+{
+  "duplicateItem": {
+    "id": "1",
+    "name": "Existing Item",
+    "image": "existing.png",
+    "price": "$10"
+  },
+  "incompleteItems": {
+    "missingId": {
+      "name": "No ID Item",
+      "image": "no-id.png",
+      "price": "$15"
+    },
+    "missingName": {
+      "id": "100",
+      "image": "no-name.png",
+      "price": "$15"
+    },
+    "missingPrice": {
+      "id": "101",
+      "name": "No Price Item",
+      "image": "no-price.png"
+    },
+    "missingImage": {
+      "id": "102",
+      "name": "No Image Item",
+      "price": "$15"
+    }
+  }
+} 

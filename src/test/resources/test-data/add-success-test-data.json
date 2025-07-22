@@ -1,0 +1,8 @@
+{
+  "newItem": {
+    "id": "999",
+    "name": "Test Pizza",
+    "image": "test-pizza.png",
+    "price": "$12"
+  }
+} 

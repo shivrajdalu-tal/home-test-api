@@ -6,7 +6,7 @@ class InventoryApiTest {
 
     @Karate.Test
     Karate testInventoryApi() {
-        return Karate.run("classpath:features/inventory-api.feature")
+        return Karate.run("classpath:features")
                 .relativeTo(getClass());
     }
 } 
