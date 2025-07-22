@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="res/bootstrap.min.css" type="text/css"/>
+    <link rel="stylesheet" href="res/karate-report.css" type="text/css"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <script type="text/javascript" src="res/jquery.min.js"></script>
+    <script type="text/javascript" src="res/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="res/bootstrap.min.js"></script>
+    <script type="text/javascript" src="res/karate-report.js"></script>
+    <script type="text/javascript" src="res/Resemble.js"></script>
+    <script>
+!function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.async=!0,p.src=s.api_host+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="capture identify alias people.set people.set_once set_config register register_once unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled onFeatureFlags".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
+  api_host:'https://app.posthog.com',
+  persistence:'localStorage',
+  autocapture:false,
+  capture_pageview:false,
+  api_transport:'sendBeacon',
+  loaded: function(posthog) { 
+    posthog.capture("report_feature",{distinct_id:"370e227d-6824-4b36-954e-58766c37aba8",karate_version:"1.5.1",karate_meta:null});
+  }
+});
+</script>
+
+    <title>features.inventory-retrieval</title>
+  </head>
+  <body>
+    <div id="root-container">
+      <div id="leftnav">
+        
+        <div>
+  <div class="nav-logo">
+    <a href="https://karatelabs.io">
+      <img src="karate-labs-logo-ring.svg" alt="Karate Labs"/>
+    </a>
+    <div class="nav-count">
+      <div id="nav-pass" class="bg-success">3</div>
+      <div id="nav-fail" class="bg-danger">0</div>
+    </div>
+  </div>
+  <div id="nav-env">
+    <div></div>
+  </div>
+  <div id="nav-type">
+    <div>Scenarios</div>
+  </div>
+  <div id="nav-date">
+    <div>2025-07-22 09:42:41 pm</div>
+  </div>
+</div>
+
+        <div class="nav-container">
+          <div class="nav-item passed">
+            <a href="#[1:8]"><span>[1:8]</span> <span>Get all menu items</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[2:16]"><span>[2:16]</span> <span>Filter by specific ID</span></a>
+          </div>
+          <div class="nav-item passed">
+            <a href="#[3:24]"><span>[3:24]</span> <span>Validate specific expected item exists in inventory</span></a>
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="page-heading alert alert-primary">
+          <a href="karate-summary.html">Summary</a><span class="feature-label">|</span>
+          <a href="karate-tags.html">Tags</a><span class="feature-label">|</span>
+          <span class="feature-label">Feature:</span>
+          <span class="feature-path">features/inventory-retrieval.feature</span><span class="feature-label">|</span>
+          <span class="feature-name">Inventory API - Retrieval Operations</span>
+          <span class="feature-description"></span>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[1:8]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[1:8]</span>
+                <span class="scenario-name">Get all menu items</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>69</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[1:8]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[1:8]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">21:42:41.093 karate.env system property was: null 
+21:42:41.097 Configuration loaded for environment: dev 
+21:42:41.098 Base URL: http://localhost:3100/ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:8]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>configure headers = { &#39;Content-Type&#39;: &#39;application/json&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[1:8]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def testData = read(&#39;classpath:test-data/retrieval-test-data.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">4</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.9">
+      <div class="step-ref passed">9</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/inventory&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.10">
+      <div class="step-ref passed">10</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">36</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.10">21:42:41.110 request:
+1 &gt; GET http://localhost:3100/api/inventory
+1 &gt; Content-Type: application/json
+1 &gt; Host: localhost:3100
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/22.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+21:42:41.142 response time in milliseconds: 31
+1 &lt; 200
+1 &lt; X-Powered-By: Express
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 1076
+1 &lt; ETag: W/&quot;434-ZJx4LCmIqE0RDM0CKi+LlcnKPyA&quot;
+1 &lt; Date: Tue, 22 Jul 2025 16:12:41 GMT
+1 &lt; Connection: keep-alive
+1 &lt; Keep-Alive: timeout=5
+{&quot;data&quot;:[{&quot;id&quot;:&quot;1&quot;,&quot;name&quot;:&quot;Classic Muzzarella&quot;,&quot;image&quot;:&quot;classic.png&quot;,&quot;price&quot;:&quot;$8&quot;},{&quot;id&quot;:&quot;2&quot;,&quot;name&quot;:&quot;Crispy Bacon&quot;,&quot;image&quot;:&quot;bacon.png&quot;,&quot;price&quot;:&quot;$9&quot;},{&quot;id&quot;:&quot;3&quot;,&quot;name&quot;:&quot;Baked Rolls x 8&quot;,&quot;image&quot;:&quot;roll.png&quot;,&quot;price&quot;:&quot;$10&quot;},{&quot;id&quot;:&quot;4&quot;,&quot;name&quot;:&quot;Garlic Mix&quot;,&quot;image&quot;:&quot;garlicmix.png&quot;,&quot;price&quot;:&quot;$9&quot;},{&quot;id&quot;:&quot;5&quot;,&quot;name&quot;:&quot;Margarita&quot;,&quot;image&quot;:&quot;margarita.png&quot;,&quot;price&quot;:&quot;$9&quot;},{&quot;id&quot;:&quot;6&quot;,&quot;name&quot;:&quot;Veggie&quot;,&quot;image&quot;:&quot;veggie.png&quot;,&quot;price&quot;:&quot;$8&quot;},{&quot;id&quot;:&quot;7&quot;,&quot;name&quot;:&quot;Super Pepperoni&quot;,&quot;image&quot;:&quot;extrapeperoni.png&quot;,&quot;price&quot;:&quot;$10&quot;},{&quot;id&quot;:&quot;8&quot;,&quot;name&quot;:&quot;Evergreen Cream&quot;,&quot;image&quot;:&quot;evergreen.png&quot;,&quot;price&quot;:&quot;$9&quot;},{&quot;id&quot;:&quot;9&quot;,&quot;name&quot;:&quot;Muzzarella BBQ&quot;,&quot;image&quot;:&quot;bbqcheese.png&quot;,&quot;price&quot;:&quot;$9&quot;},{&quot;id&quot;:&quot;4974&quot;,&quot;name&quot;:&quot;Test Pizza&quot;,&quot;image&quot;:&quot;test-pizza.png&quot;,&quot;price&quot;:&quot;$12&quot;},{&quot;id&quot;:&quot;4403&quot;,&quot;name&quot;:&quot;Test Pizza&quot;,&quot;image&quot;:&quot;test-pizza.png&quot;,&quot;price&quot;:&quot;$12&quot;},{&quot;id&quot;:&quot;8616&quot;,&quot;name&quot;:&quot;Test Pizza&quot;,&quot;image&quot;:&quot;test-pizza.png&quot;,&quot;price&quot;:&quot;$12&quot;},{&quot;id&quot;:&quot;2719&quot;,&quot;name&quot;:&quot;Test Pizza&quot;,&quot;image&quot;:&quot;test-pizza.png&quot;,&quot;price&quot;:&quot;$12&quot;},{&quot;id&quot;:&quot;9578&quot;,&quot;name&quot;:&quot;Test Pizza&quot;,&quot;image&quot;:&quot;test-pizza.png&quot;,&quot;price&quot;:&quot;$12&quot;},{&quot;id&quot;:&quot;7846&quot;,&quot;name&quot;:&quot;Test Pizza&quot;,&quot;image&quot;:&quot;test-pizza.png&quot;,&quot;price&quot;:&quot;$12&quot;}]}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.11">
+      <div class="step-ref passed">11</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.12">
+      <div class="step-ref passed">12</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response.data == &#39;#array&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.13">
+      <div class="step-ref passed">13</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match each response.data[*] contains { id: &#39;#present&#39;, name: &#39;#present&#39;, price: &#39;#present&#39;, image: &#39;#present&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">21</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.14">
+      <div class="step-ref passed">14</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Retrieved inventory items, total count:&#39;, response.data.length)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.14">21:42:41.169 Retrieved inventory items, total count: 15 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[2:16]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[2:16]</span>
+                <span class="scenario-name">Filter by specific ID</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>100</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[2:16]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[2:16]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">21:42:41.191 karate.env system property was: null 
+21:42:41.193 Configuration loaded for environment: dev 
+21:42:41.193 Base URL: http://localhost:3100/ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:16]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>configure headers = { &#39;Content-Type&#39;: &#39;application/json&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[2:16]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def testData = read(&#39;classpath:test-data/retrieval-test-data.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.17">
+      <div class="step-ref passed">17</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/inventory/filter&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.18">
+      <div class="step-ref passed">18</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>param id = testData.filters.byId</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.19">
+      <div class="step-ref passed">19</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">85</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.19">21:42:41.210 request:
+1 &gt; GET http://localhost:3100/api/inventory/filter?id=1
+1 &gt; Content-Type: application/json
+1 &gt; Host: localhost:3100
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/22.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+21:42:41.283 response time in milliseconds: 73
+1 &lt; 200
+1 &lt; X-Powered-By: Express
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 73
+1 &lt; ETag: W/&quot;49-zWBt4a9Vz0p2IPapBLSofmLgI0M&quot;
+1 &lt; Date: Tue, 22 Jul 2025 16:12:41 GMT
+1 &lt; Connection: keep-alive
+1 &lt; Keep-Alive: timeout=5
+{&quot;id&quot;:&quot;1&quot;,&quot;name&quot;:&quot;Classic Muzzarella&quot;,&quot;image&quot;:&quot;classic.png&quot;,&quot;price&quot;:&quot;$8&quot;}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.20">
+      <div class="step-ref passed">20</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.21">
+      <div class="step-ref passed">21</div>
+      
+      <div class="step-cell passed">
+        <span>And</span>&nbsp;<span>match response contains { id: &#39;#present&#39;, name: &#39;#present&#39;, price: &#39;#present&#39;, image: &#39;#present&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.22">
+      <div class="step-ref passed">22</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Retrieved filtered item by ID:&#39;, testData.filters.byId, &#39;Result:&#39;, response)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">7</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.22">21:42:41.295 Retrieved filtered item by ID: 1 Result: {
+  &quot;id&quot;: &quot;1&quot;,
+  &quot;name&quot;: &quot;Classic Muzzarella&quot;,
+  &quot;image&quot;: &quot;classic.png&quot;,
+  &quot;price&quot;: &quot;$8&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+        <div class="scenario">
+          <div class="scenario-heading" id="[3:24]">
+            <div class="heading-container">
+              <div class="scenario-tags">
+                
+              </div>
+              <div class="scenario-keyword">
+                Scenario: <span>[3:24]</span>
+                <span class="scenario-name">Validate specific expected item exists in inventory</span>
+                <span></span>
+              </div>
+            </div>
+            <div class="scenario-time passed">
+              <span>ms:</span>&nbsp;<span>128</span>
+            </div>
+          </div>
+          <div class="step-row">
+            <div class="step-container" id="[3:24]bg">
+              <div class="step-ref bg-step">&gt;&gt;</div>
+              <div class="step-cell passed">Background:</div>
+            </div>
+            <div class="time-cell passed"></div>
+          </div>
+          <div data-parent="[3:24]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.4">
+      <div class="step-ref bg-step">4</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>url baseUrl</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.4">21:42:41.315 karate.env system property was: null 
+21:42:41.317 Configuration loaded for environment: dev 
+21:42:41.317 Base URL: http://localhost:3100/ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:24]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.5">
+      <div class="step-ref bg-step">5</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>configure headers = { &#39;Content-Type&#39;: &#39;application/json&#39; }</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div data-parent="[3:24]bg"><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.6">
+      <div class="step-ref bg-step">6</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def testData = read(&#39;classpath:test-data/retrieval-test-data.json&#39;)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">5</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.25">
+      <div class="step-ref passed">25</div>
+      
+      <div class="step-cell passed">
+        <span>Given</span>&nbsp;<span>path &#39;/api/inventory&#39;</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.26">
+      <div class="step-ref passed">26</div>
+      
+      <div class="step-cell passed">
+        <span>When</span>&nbsp;<span>method GET</span>
+      </div>
+    </div>
+    <div class="time-cell passed">87</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.26">21:42:41.337 request:
+1 &gt; GET http://localhost:3100/api/inventory
+1 &gt; Content-Type: application/json
+1 &gt; Host: localhost:3100
+1 &gt; Connection: Keep-Alive
+1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/22.0.2)
+1 &gt; Accept-Encoding: gzip,deflate
+
+
+21:42:41.417 response time in milliseconds: 77
+1 &lt; 200
+1 &lt; X-Powered-By: Express
+1 &lt; Content-Type: application/json; charset=utf-8
+1 &lt; Content-Length: 1076
+1 &lt; ETag: W/&quot;434-ZJx4LCmIqE0RDM0CKi+LlcnKPyA&quot;
+1 &lt; Date: Tue, 22 Jul 2025 16:12:41 GMT
+1 &lt; Connection: keep-alive
+1 &lt; Keep-Alive: timeout=5
+{&quot;data&quot;:[{&quot;id&quot;:&quot;1&quot;,&quot;name&quot;:&quot;Classic Muzzarella&quot;,&quot;image&quot;:&quot;classic.png&quot;,&quot;price&quot;:&quot;$8&quot;},{&quot;id&quot;:&quot;2&quot;,&quot;name&quot;:&quot;Crispy Bacon&quot;,&quot;image&quot;:&quot;bacon.png&quot;,&quot;price&quot;:&quot;$9&quot;},{&quot;id&quot;:&quot;3&quot;,&quot;name&quot;:&quot;Baked Rolls x 8&quot;,&quot;image&quot;:&quot;roll.png&quot;,&quot;price&quot;:&quot;$10&quot;},{&quot;id&quot;:&quot;4&quot;,&quot;name&quot;:&quot;Garlic Mix&quot;,&quot;image&quot;:&quot;garlicmix.png&quot;,&quot;price&quot;:&quot;$9&quot;},{&quot;id&quot;:&quot;5&quot;,&quot;name&quot;:&quot;Margarita&quot;,&quot;image&quot;:&quot;margarita.png&quot;,&quot;price&quot;:&quot;$9&quot;},{&quot;id&quot;:&quot;6&quot;,&quot;name&quot;:&quot;Veggie&quot;,&quot;image&quot;:&quot;veggie.png&quot;,&quot;price&quot;:&quot;$8&quot;},{&quot;id&quot;:&quot;7&quot;,&quot;name&quot;:&quot;Super Pepperoni&quot;,&quot;image&quot;:&quot;extrapeperoni.png&quot;,&quot;price&quot;:&quot;$10&quot;},{&quot;id&quot;:&quot;8&quot;,&quot;name&quot;:&quot;Evergreen Cream&quot;,&quot;image&quot;:&quot;evergreen.png&quot;,&quot;price&quot;:&quot;$9&quot;},{&quot;id&quot;:&quot;9&quot;,&quot;name&quot;:&quot;Muzzarella BBQ&quot;,&quot;image&quot;:&quot;bbqcheese.png&quot;,&quot;price&quot;:&quot;$9&quot;},{&quot;id&quot;:&quot;4974&quot;,&quot;name&quot;:&quot;Test Pizza&quot;,&quot;image&quot;:&quot;test-pizza.png&quot;,&quot;price&quot;:&quot;$12&quot;},{&quot;id&quot;:&quot;4403&quot;,&quot;name&quot;:&quot;Test Pizza&quot;,&quot;image&quot;:&quot;test-pizza.png&quot;,&quot;price&quot;:&quot;$12&quot;},{&quot;id&quot;:&quot;8616&quot;,&quot;name&quot;:&quot;Test Pizza&quot;,&quot;image&quot;:&quot;test-pizza.png&quot;,&quot;price&quot;:&quot;$12&quot;},{&quot;id&quot;:&quot;2719&quot;,&quot;name&quot;:&quot;Test Pizza&quot;,&quot;image&quot;:&quot;test-pizza.png&quot;,&quot;price&quot;:&quot;$12&quot;},{&quot;id&quot;:&quot;9578&quot;,&quot;name&quot;:&quot;Test Pizza&quot;,&quot;image&quot;:&quot;test-pizza.png&quot;,&quot;price&quot;:&quot;$12&quot;},{&quot;id&quot;:&quot;7846&quot;,&quot;name&quot;:&quot;Test Pizza&quot;,&quot;image&quot;:&quot;test-pizza.png&quot;,&quot;price&quot;:&quot;$12&quot;}]}
+
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.27">
+      <div class="step-ref passed">27</div>
+      
+      <div class="step-cell passed">
+        <span>Then</span>&nbsp;<span>status 200</span>
+      </div>
+    </div>
+    <div class="time-cell passed">0</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Find the specific expected item</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.30">
+      <div class="step-ref passed">30</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def expectedItem = testData.expectedItem</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.31">
+      <div class="step-ref passed">31</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def foundItems = karate.filter(response.data, function(item){ return item.id == expectedItem.id })</span>
+      </div>
+    </div>
+    <div class="time-cell passed">7</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.32">
+      <div class="step-ref passed">32</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>assert foundItems.length &gt; 0</span>
+      </div>
+    </div>
+    <div class="time-cell passed">1</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.33">
+      <div class="step-ref passed">33</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;Found expected item in inventory:&#39;, foundItems[0])</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.33">21:42:41.433 Found expected item in inventory: {
+  &quot;id&quot;: &quot;1&quot;,
+  &quot;name&quot;: &quot;Classic Muzzarella&quot;,
+  &quot;image&quot;: &quot;classic.png&quot;,
+  &quot;price&quot;: &quot;$8&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  <div class="step-row">
+    <div class="step-container">
+      <div class="step-ref passed"></div>
+      
+      <div class="step-cell comment"># Validate exact match with expected data</div>
+    </div>
+    <div class="time-cell comment"></div>            
+  </div>
+
+  <div class="step-row">
+    <div class="step-container" id="0.36">
+      <div class="step-ref passed">36</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>def foundItem = foundItems[0]</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.37">
+      <div class="step-ref passed">37</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match foundItem.id == expectedItem.id</span>
+      </div>
+    </div>
+    <div class="time-cell passed">2</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.38">
+      <div class="step-ref passed">38</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match foundItem.name == expectedItem.name</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.39">
+      <div class="step-ref passed">39</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match foundItem.image == expectedItem.image</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.40">
+      <div class="step-ref passed">40</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>match foundItem.price == expectedItem.price</span>
+      </div>
+    </div>
+    <div class="time-cell passed">3</div>
+  </div>
+
+   
+  
+  
+
+  
+
+     
+
+  
+
+</div>
+</div>
+          <div><div>
+  
+
+  
+
+  <div class="step-row">
+    <div class="step-container" id="0.41">
+      <div class="step-ref passed">41</div>
+      
+      <div class="step-cell passed">
+        <span>*</span>&nbsp;<span>karate.log(&#39;✓ Validated expected item matches exactly:&#39;, expectedItem)</span>
+      </div>
+    </div>
+    <div class="time-cell passed">7</div>
+  </div>
+
+   
+  
+  
+
+  
+
+  <div class="preformatted" data-parent="0.41">21:42:41.455 ✓ Validated expected item matches exactly: {
+  &quot;id&quot;: &quot;1&quot;,
+  &quot;name&quot;: &quot;Classic Muzzarella&quot;,
+  &quot;image&quot;: &quot;classic.png&quot;,
+  &quot;price&quot;: &quot;$8&quot;
+}
+ 
+</div>   
+
+  
+
+</div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

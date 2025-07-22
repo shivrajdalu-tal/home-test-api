@@ -126,6 +126,9 @@ After running tests, comprehensive reports are generated:
 - **📁 JSON Report**: `target/karate-reports/karate-summary.json`
 - **🧪 JUnit XML**: `target/surefire-reports/`
 
+- **📊 Sample Repost is stored as**: `karate-reports/karate-summary.html`
+
+
 ## Key Features
 
 ### 🎯 **Dynamic Test Data**
