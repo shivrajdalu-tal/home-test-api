@@ -9,26 +9,22 @@ Comprehensive BDD testing suite for an Inventory API using Karate framework with
 ## Project Structure
 
 ```
-home-test-api/
-├── src/test/
-│   ├── java/com/hometest/api/
-│   │   └── InventoryApiTest.java                     # JUnit 5 test runner
-│   └── resources/
-│       ├── features/                                 # Feature files
-│       │   ├── commonFeatures/
-│       │   │   └── createNewInventory.feature        # Reusable inventory 
-│       │   ├── inventoryAddSuccess.feature           # Successful item 
-│       │   ├── inventoryAddValidation.feature        # Validation error 
-│       │   └── inventoryRetrieval.feature            # Item retrieval 
-│       ├── testData/                                 # Test data files
-│       │   ├── addSuccessTestData.json               # Success scenario data
-│       │   ├── addValidationTestData.json            # Validation test data
-│       │   └── retrievalTestData.json                # Retrieval test data
-│       └── karate-config.js                          # Global configuration
-│
-├── pom.xml                                           # Maven configuration
-├── README.md                                         # Project documentation
-│──Reports
+├── reports/                                      # Sample test reports
+└── src/test/
+    ├── java/com/hometest/api/
+    │   └── InventoryApiTest.java                 # JUnit 5 test runner
+    └── resources/
+        ├── features/                             # Feature files
+        │   ├── commonFeatures/
+        │   │   └── createNewInventory.feature    # Reusable inventory
+        │   ├── inventoryAddSuccess.feature       # Successful item addition
+        │   ├── inventoryAddValidation.feature    # Validation error cases
+        │   └── inventoryRetrieval.feature        # Item retrieval operations
+        ├── testData/                             # Test data files
+        │   ├── addSuccessTestData.json           # Success scenario data
+        │   ├── addValidationTestData.json        # Validation test data
+        │   └── retrievalTestData.json            # Retrieval test data
+        └── karate-config.js                      # Global configuration
 ```
 
 ## Prerequisites
@@ -123,7 +119,7 @@ After running tests, comprehensive reports are generated:
 - **📁 JSON Report**: `target/karate-reports/karate-summary.json`
 - **🧪 JUnit XML**: `target/surefire-reports/`
 
-- **📊 Sample Repost is stored as**: `reports/karate-summary.html`
+- **📊 Sample Report is stored as**: `reports/karate-summary.html`
 
 
 ## Key Features
