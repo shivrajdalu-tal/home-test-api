@@ -1,5 +1,5 @@
 {
-  "duplicateItem": {
+  "existingItem": {
     "id": "1",
     "name": "Existing Item",
     "image": "existing.png",

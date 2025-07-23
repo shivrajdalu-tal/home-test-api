@@ -49,25 +49,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
     <div>Scenarios</div>
   </div>
   <div id="nav-date">
-    <div>2025-07-23 12:08:00 pm</div>
+    <div>2025-07-23 05:22:28 pm</div>
   </div>
 </div>
 
         <div class="nav-container">
           <div class="nav-item passed">
-            <a href="#[1:8]"><span>[1:8]</span> <span>Add duplicate item - should fail</span></a>
+            <a href="#[1:8]"><span>[1:8]</span> <span>4. Add Item with Existing Id - should fail</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[2:15]"><span>[2:15]</span> <span>Add item missing ID - should fail</span></a>
+            <a href="#[2:15]"><span>[2:15]</span> <span>5a. Add item missing ID - should fail</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[3:22]"><span>[3:22]</span> <span>Add item missing name - should fail</span></a>
+            <a href="#[3:22]"><span>[3:22]</span> <span>5b. Add item missing name - should fail</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[4:29]"><span>[4:29]</span> <span>Add item missing price - should fail</span></a>
+            <a href="#[4:29]"><span>[4:29]</span> <span>5c. Add item missing price - should fail</span></a>
           </div>
           <div class="nav-item passed">
-            <a href="#[5:36]"><span>[5:36]</span> <span>Add item missing image - should fail</span></a>
+            <a href="#[5:36]"><span>[5:36]</span> <span>5d. Add item missing image - should fail</span></a>
           </div>
         </div>
       </div>
@@ -88,12 +88,12 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
               </div>
               <div class="scenario-keyword">
                 Scenario: <span>[1:8]</span>
-                <span class="scenario-name">Add duplicate item - should fail</span>
+                <span class="scenario-name">4. Add Item with Existing Id - should fail</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>61</span>
+              <span>ms:</span>&nbsp;<span>21</span>
             </div>
           </div>
           <div class="step-row">
@@ -125,9 +125,9 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.4">12:08:00.000 karate.env system property was: null 
-12:08:00.000 Configuration loaded for environment: dev 
-12:08:00.003 Base URL: http://localhost:3100/ 
+  <div class="preformatted" data-parent="0.4">17:22:27.908 karate.env system property was: null 
+17:22:27.910 Configuration loaded for environment: dev 
+17:22:27.910 Base URL: http://localhost:3100/ 
 </div>   
 
   
@@ -175,7 +175,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>*</span>&nbsp;<span>def testData = read(&#39;classpath:test-data/add-validation-test-data.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">3</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -203,7 +203,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>Given</span>&nbsp;<span>path &#39;/api/inventory/add&#39;</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">0</div>
   </div>
 
    
@@ -231,7 +231,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>And</span>&nbsp;<span>request testData.duplicateItem</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -259,7 +259,7 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">54</div>
+    <div class="time-cell passed">15</div>
   </div>
 
    
@@ -268,26 +268,25 @@ posthog.init('phc_M6fKk3dSX9HjglkqPSybauGas45NINb7EgsPGU8N9g1',{
 
   
 
-  <div class="preformatted" data-parent="0.11">12:08:00.012 request:
+  <div class="preformatted" data-parent="0.11">17:22:27.916 request:
 1 &gt; POST http://localhost:3100/api/inventory/add
-1 &gt; Content-Type: application/json; charset=UTF-8
-1 &gt; Content-Length: 70
+1 &gt; Content-Type: application/json
 1 &gt; Host: localhost:3100
 1 &gt; Connection: Keep-Alive
 1 &gt; User-Agent: Apache-HttpClient/4.5.14 (Java/22.0.2)
 1 &gt; Accept-Encoding: gzip,deflate
-{&quot;id&quot;:&quot;1&quot;,&quot;name&quot;:&quot;Existing Item&quot;,&quot;image&quot;:&quot;existing.png&quot;,&quot;price&quot;:&quot;$10&quot;}
 
-12:08:00.059 response time in milliseconds: 46
+
+17:22:27.929 response time in milliseconds: 12
 1 &lt; 400
 1 &lt; X-Powered-By: Express
-1 &lt; Content-Type: text/plain; charset=utf-8
-1 &lt; Content-Length: 11
-1 &lt; ETag: W/&quot;b-EFiDB1U+dmqzx9Mo2UjcZ1SJPO8&quot;
-1 &lt; Date: Wed, 23 Jul 2025 06:38:00 GMT
+1 &lt; Content-Type: text/html; charset=utf-8
+1 &lt; Content-Length: 28
+1 &lt; ETag: W/&quot;1c-k7jAXLdqgoyddFLKVx/smZcPhI0&quot;
+1 &lt; Date: Wed, 23 Jul 2025 11:52:27 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
-Bad Request
+Not all requirements are met
 
 </div>   
 
@@ -333,10 +332,10 @@ Bad Request
       <div class="step-ref passed">13</div>
       
       <div class="step-cell passed">
-        <span>*</span>&nbsp;<span>karate.log(&#39;Correctly rejected duplicate item:&#39;, testData.duplicateItem)</span>
+        <span>*</span>&nbsp;<span>karate.log(&#39;Correctly rejected duplicate item:&#39;, testData.existingItem)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -345,7 +344,7 @@ Bad Request
 
   
 
-  <div class="preformatted" data-parent="0.13">12:08:00.067 Correctly rejected duplicate item: {
+  <div class="preformatted" data-parent="0.13">17:22:27.932 Correctly rejected duplicate item: {
   &quot;id&quot;: &quot;1&quot;,
   &quot;name&quot;: &quot;Existing Item&quot;,
   &quot;image&quot;: &quot;existing.png&quot;,
@@ -367,12 +366,12 @@ Bad Request
               </div>
               <div class="scenario-keyword">
                 Scenario: <span>[2:15]</span>
-                <span class="scenario-name">Add item missing ID - should fail</span>
+                <span class="scenario-name">5a. Add item missing ID - should fail</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>35</span>
+              <span>ms:</span>&nbsp;<span>37</span>
             </div>
           </div>
           <div class="step-row">
@@ -404,9 +403,9 @@ Bad Request
 
   
 
-  <div class="preformatted" data-parent="0.4">12:08:00.075 karate.env system property was: null 
-12:08:00.076 Configuration loaded for environment: dev 
-12:08:00.076 Base URL: http://localhost:3100/ 
+  <div class="preformatted" data-parent="0.4">17:22:27.942 karate.env system property was: null 
+17:22:27.944 Configuration loaded for environment: dev 
+17:22:27.944 Base URL: http://localhost:3100/ 
 </div>   
 
   
@@ -510,7 +509,7 @@ Bad Request
         <span>And</span>&nbsp;<span>request testData.incompleteItems.missingId</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -538,7 +537,7 @@ Bad Request
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">29</div>
+    <div class="time-cell passed">28</div>
   </div>
 
    
@@ -547,7 +546,7 @@ Bad Request
 
   
 
-  <div class="preformatted" data-parent="0.18">12:08:00.086 request:
+  <div class="preformatted" data-parent="0.18">17:22:27.955 request:
 1 &gt; POST http://localhost:3100/api/inventory/add
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 55
@@ -557,13 +556,13 @@ Bad Request
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;name&quot;:&quot;No ID Item&quot;,&quot;image&quot;:&quot;no-id.png&quot;,&quot;price&quot;:&quot;$15&quot;}
 
-12:08:00.113 response time in milliseconds: 26
+17:22:27.979 response time in milliseconds: 23
 1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Content-Type: text/html; charset=utf-8
 1 &lt; Content-Length: 28
 1 &lt; ETag: W/&quot;1c-k7jAXLdqgoyddFLKVx/smZcPhI0&quot;
-1 &lt; Date: Wed, 23 Jul 2025 06:38:00 GMT
+1 &lt; Date: Wed, 23 Jul 2025 11:52:27 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 Not all requirements are met
@@ -615,7 +614,7 @@ Not all requirements are met
         <span>*</span>&nbsp;<span>karate.log(&#39;Correctly rejected item missing ID:&#39;, testData.incompleteItems.missingId)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -624,7 +623,7 @@ Not all requirements are met
 
   
 
-  <div class="preformatted" data-parent="0.20">12:08:00.113 Correctly rejected item missing ID: {
+  <div class="preformatted" data-parent="0.20">17:22:27.983 Correctly rejected item missing ID: {
   &quot;name&quot;: &quot;No ID Item&quot;,
   &quot;image&quot;: &quot;no-id.png&quot;,
   &quot;price&quot;: &quot;$15&quot;
@@ -645,12 +644,12 @@ Not all requirements are met
               </div>
               <div class="scenario-keyword">
                 Scenario: <span>[3:22]</span>
-                <span class="scenario-name">Add item missing name - should fail</span>
+                <span class="scenario-name">5b. Add item missing name - should fail</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>141</span>
+              <span>ms:</span>&nbsp;<span>24</span>
             </div>
           </div>
           <div class="step-row">
@@ -682,9 +681,9 @@ Not all requirements are met
 
   
 
-  <div class="preformatted" data-parent="0.4">12:08:00.123 karate.env system property was: null 
-12:08:00.124 Configuration loaded for environment: dev 
-12:08:00.124 Base URL: http://localhost:3100/ 
+  <div class="preformatted" data-parent="0.4">17:22:27.995 karate.env system property was: null 
+17:22:27.996 Configuration loaded for environment: dev 
+17:22:27.996 Base URL: http://localhost:3100/ 
 </div>   
 
   
@@ -732,7 +731,7 @@ Not all requirements are met
         <span>*</span>&nbsp;<span>def testData = read(&#39;classpath:test-data/add-validation-test-data.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -816,7 +815,7 @@ Not all requirements are met
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">136</div>
+    <div class="time-cell passed">19</div>
   </div>
 
    
@@ -825,7 +824,7 @@ Not all requirements are met
 
   
 
-  <div class="preformatted" data-parent="0.25">12:08:00.127 request:
+  <div class="preformatted" data-parent="0.25">17:22:28.000 request:
 1 &gt; POST http://localhost:3100/api/inventory/add
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 48
@@ -835,13 +834,13 @@ Not all requirements are met
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;id&quot;:&quot;100&quot;,&quot;image&quot;:&quot;no-name.png&quot;,&quot;price&quot;:&quot;$15&quot;}
 
-12:08:00.263 response time in milliseconds: 136
+17:22:28.018 response time in milliseconds: 16
 1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Content-Type: text/html; charset=utf-8
 1 &lt; Content-Length: 28
 1 &lt; ETag: W/&quot;1c-k7jAXLdqgoyddFLKVx/smZcPhI0&quot;
-1 &lt; Date: Wed, 23 Jul 2025 06:38:00 GMT
+1 &lt; Date: Wed, 23 Jul 2025 11:52:27 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 Not all requirements are met
@@ -893,7 +892,7 @@ Not all requirements are met
         <span>*</span>&nbsp;<span>karate.log(&#39;Correctly rejected item missing name:&#39;, testData.incompleteItems.missingName)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">3</div>
   </div>
 
    
@@ -902,7 +901,7 @@ Not all requirements are met
 
   
 
-  <div class="preformatted" data-parent="0.27">12:08:00.266 Correctly rejected item missing name: {
+  <div class="preformatted" data-parent="0.27">17:22:28.021 Correctly rejected item missing name: {
   &quot;id&quot;: &quot;100&quot;,
   &quot;image&quot;: &quot;no-name.png&quot;,
   &quot;price&quot;: &quot;$15&quot;
@@ -923,12 +922,12 @@ Not all requirements are met
               </div>
               <div class="scenario-keyword">
                 Scenario: <span>[4:29]</span>
-                <span class="scenario-name">Add item missing price - should fail</span>
+                <span class="scenario-name">5c. Add item missing price - should fail</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>28</span>
+              <span>ms:</span>&nbsp;<span>25</span>
             </div>
           </div>
           <div class="step-row">
@@ -960,9 +959,9 @@ Not all requirements are met
 
   
 
-  <div class="preformatted" data-parent="0.4">12:08:00.272 karate.env system property was: null 
-12:08:00.272 Configuration loaded for environment: dev 
-12:08:00.273 Base URL: http://localhost:3100/ 
+  <div class="preformatted" data-parent="0.4">17:22:28.031 karate.env system property was: null 
+17:22:28.032 Configuration loaded for environment: dev 
+17:22:28.032 Base URL: http://localhost:3100/ 
 </div>   
 
   
@@ -982,7 +981,7 @@ Not all requirements are met
         <span>*</span>&nbsp;<span>configure headers = { &#39;Content-Type&#39;: &#39;application/json&#39; }</span>
       </div>
     </div>
-    <div class="time-cell passed">0</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1010,7 +1009,7 @@ Not all requirements are met
         <span>*</span>&nbsp;<span>def testData = read(&#39;classpath:test-data/add-validation-test-data.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -1094,7 +1093,7 @@ Not all requirements are met
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">25</div>
+    <div class="time-cell passed">19</div>
   </div>
 
    
@@ -1103,7 +1102,7 @@ Not all requirements are met
 
   
 
-  <div class="preformatted" data-parent="0.32">12:08:00.276 request:
+  <div class="preformatted" data-parent="0.32">17:22:28.034 request:
 1 &gt; POST http://localhost:3100/api/inventory/add
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 58
@@ -1113,13 +1112,13 @@ Not all requirements are met
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;id&quot;:&quot;101&quot;,&quot;name&quot;:&quot;No Price Item&quot;,&quot;image&quot;:&quot;no-price.png&quot;}
 
-12:08:00.299 response time in milliseconds: 22
+17:22:28.056 response time in milliseconds: 21
 1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Content-Type: text/html; charset=utf-8
 1 &lt; Content-Length: 28
 1 &lt; ETag: W/&quot;1c-k7jAXLdqgoyddFLKVx/smZcPhI0&quot;
-1 &lt; Date: Wed, 23 Jul 2025 06:38:00 GMT
+1 &lt; Date: Wed, 23 Jul 2025 11:52:28 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 Not all requirements are met
@@ -1180,7 +1179,7 @@ Not all requirements are met
 
   
 
-  <div class="preformatted" data-parent="0.34">12:08:00.302 Correctly rejected item missing price: {
+  <div class="preformatted" data-parent="0.34">17:22:28.058 Correctly rejected item missing price: {
   &quot;id&quot;: &quot;101&quot;,
   &quot;name&quot;: &quot;No Price Item&quot;,
   &quot;image&quot;: &quot;no-price.png&quot;
@@ -1201,12 +1200,12 @@ Not all requirements are met
               </div>
               <div class="scenario-keyword">
                 Scenario: <span>[5:36]</span>
-                <span class="scenario-name">Add item missing image - should fail</span>
+                <span class="scenario-name">5d. Add item missing image - should fail</span>
                 <span></span>
               </div>
             </div>
             <div class="scenario-time passed">
-              <span>ms:</span>&nbsp;<span>39</span>
+              <span>ms:</span>&nbsp;<span>20</span>
             </div>
           </div>
           <div class="step-row">
@@ -1238,9 +1237,9 @@ Not all requirements are met
 
   
 
-  <div class="preformatted" data-parent="0.4">12:08:00.307 karate.env system property was: null 
-12:08:00.308 Configuration loaded for environment: dev 
-12:08:00.308 Base URL: http://localhost:3100/ 
+  <div class="preformatted" data-parent="0.4">17:22:28.064 karate.env system property was: null 
+17:22:28.064 Configuration loaded for environment: dev 
+17:22:28.064 Base URL: http://localhost:3100/ 
 </div>   
 
   
@@ -1288,7 +1287,7 @@ Not all requirements are met
         <span>*</span>&nbsp;<span>def testData = read(&#39;classpath:test-data/add-validation-test-data.json&#39;)</span>
       </div>
     </div>
-    <div class="time-cell passed">1</div>
+    <div class="time-cell passed">2</div>
   </div>
 
    
@@ -1372,7 +1371,7 @@ Not all requirements are met
         <span>When</span>&nbsp;<span>method POST</span>
       </div>
     </div>
-    <div class="time-cell passed">36</div>
+    <div class="time-cell passed">15</div>
   </div>
 
    
@@ -1381,7 +1380,7 @@ Not all requirements are met
 
   
 
-  <div class="preformatted" data-parent="0.39">12:08:00.312 request:
+  <div class="preformatted" data-parent="0.39">17:22:28.074 request:
 1 &gt; POST http://localhost:3100/api/inventory/add
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Content-Length: 49
@@ -1391,13 +1390,13 @@ Not all requirements are met
 1 &gt; Accept-Encoding: gzip,deflate
 {&quot;id&quot;:&quot;102&quot;,&quot;name&quot;:&quot;No Image Item&quot;,&quot;price&quot;:&quot;$15&quot;}
 
-12:08:00.345 response time in milliseconds: 33
+17:22:28.087 response time in milliseconds: 12
 1 &lt; 400
 1 &lt; X-Powered-By: Express
 1 &lt; Content-Type: text/html; charset=utf-8
 1 &lt; Content-Length: 28
 1 &lt; ETag: W/&quot;1c-k7jAXLdqgoyddFLKVx/smZcPhI0&quot;
-1 &lt; Date: Wed, 23 Jul 2025 06:38:00 GMT
+1 &lt; Date: Wed, 23 Jul 2025 11:52:28 GMT
 1 &lt; Connection: keep-alive
 1 &lt; Keep-Alive: timeout=5
 Not all requirements are met
@@ -1449,7 +1448,7 @@ Not all requirements are met
         <span>*</span>&nbsp;<span>karate.log(&#39;Correctly rejected item missing image:&#39;, testData.incompleteItems.missingImage)</span>
       </div>
     </div>
-    <div class="time-cell passed">2</div>
+    <div class="time-cell passed">1</div>
   </div>
 
    
@@ -1458,7 +1457,7 @@ Not all requirements are met
 
   
 
-  <div class="preformatted" data-parent="0.41">12:08:00.348 Correctly rejected item missing image: {
+  <div class="preformatted" data-parent="0.41">17:22:28.089 Correctly rejected item missing image: {
   &quot;id&quot;: &quot;102&quot;,
   &quot;name&quot;: &quot;No Image Item&quot;,
   &quot;price&quot;: &quot;$15&quot;

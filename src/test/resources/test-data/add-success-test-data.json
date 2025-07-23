@@ -1,8 +1,4 @@
 {
-  "newItem": {
-    "id": "999",
-    "name": "Test Pizza",
-    "image": "test-pizza.png",
-    "price": "$12"
-  }
+  "newItem": 
+   {"id": "10","name": "Hawaiian","image": "hawaiian.png","price": "$14"} 
 } 

@@ -101,12 +101,6 @@ mvn test
 
 # Run with custom URL
 mvn test -DbaseUrl=https://your-api-url.com
-
-# Run with parallel execution
-mvn test -Dkarate.options="--threads 5"
-
-# Run specific feature
-mvn test -Dkarate.options="classpath:features/inventory-add-success.feature"
 ```
 
 ### Test Execution Flow
@@ -183,13 +177,6 @@ mvn clean
 mvn dependency:resolve
 mvn test
 ```
-
-**🐛 Debug mode**:
-```bash
-mvn test -Dkarate.options="--debug" -X
-```
-
-## Dependencies
 
 | Dependency | Version | Purpose |
 |------------|---------|---------|
