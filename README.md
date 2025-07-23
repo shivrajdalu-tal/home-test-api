@@ -28,7 +28,7 @@ home-test-api/
 │
 ├── pom.xml                                           # Maven configuration
 ├── README.md                                         # Project documentation
-│├──Reports
+│──Reports
 ```
 
 ## Prerequisites
