@@ -3,7 +3,7 @@ Feature: Inventory API - Retrieval Operations
   Background:
     * url baseUrl
     * configure headers = { 'Content-Type': 'application/json' }
-    * def testData = read('classpath:test-data/retrieval-test-data.json')
+    * def testData = read('classpath:testData/retrievalTestData.json')
 
   Scenario: 1. Get all menu items
     Given path '/api/inventory'

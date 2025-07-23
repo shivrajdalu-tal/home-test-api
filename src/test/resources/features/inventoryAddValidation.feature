@@ -3,7 +3,7 @@ Feature: Inventory API - Add Item Validation Cases
   Background:
     * url baseUrl
     * configure headers = { 'Content-Type': 'application/json' }
-    * def testData = read('classpath:test-data/add-validation-test-data.json')
+    * def testData = read('classpath:testData/addValidationTestData.json')
 
   Scenario: 4. Add Item with Existing Id - should fail
     Given path '/api/inventory/add'

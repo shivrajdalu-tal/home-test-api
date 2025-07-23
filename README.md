@@ -16,16 +16,15 @@ home-test-api/
 │   │   └── InventoryApiTest.java                     # JUnit 5 test runner
 │   └── resources/
 │       ├── features/                                 # Feature files
-│       │   ├── inventory-add-success.feature         # Successful item addition
-│       │   ├── inventory-add-validation.feature      # Validation error cases
-│       │   └── inventory-retrieval.feature           # Item retrieval operations
-│       ├── test-data/                                # Test data files
-│       │   ├── add-success-test-data.json            # Success scenario data
-│       │   ├── add-validation-test-data.json         # Validation test data
-│       │   └── retrieval-test-data.json              # Retrieval test data
-│       ├── karate-config.js                          # Global configuration
-│       └── application.properties                    # Application settings
-└── target/karate-reports/                            # Generated HTML reports
+│       │   ├── inventoryAddSuccess.feature           # Successful item addition
+│       │   ├── inventoryAddValidation.feature        # Validation error cases
+│       │   └── inventoryRetrieval.feature            # Item retrieval operations
+│       ├── testData/                                 # Test data files
+│       │   ├── addSuccessTestData.json               # Success scenario data
+│       │   ├── addValidationTestData.json            # Validation test data
+│       │   └── retrievalTestData.json                # Retrieval test data
+│       └── karate-config.js                          # Global configuration
+reports
 ```
 
 ## Prerequisites
@@ -55,15 +54,15 @@ var config = {
 
 ## Test Features
 
-### 🟢 **Inventory Retrieval Tests** (`inventory-retrieval.feature`)
+### 🟢 **Inventory Retrieval Tests** (`inventoryRetrieval.feature`)
 - **Get all menu items**: Validates inventory structure and required fields
 - **Filter by specific ID**: Tests ID-based filtering functionality  
 - **Validate specific expected item**: Confirms "Classic Muzzarella" item exists with exact data
 
-### ✅ **Add Item Success Tests** (`inventory-add-success.feature`)
+### ✅ **Add Item Success Tests** (`inventoryAddSuccess.feature`)
 - **Add item with random ID and verify**: Complete end-to-end test that adds an item with random ID and validates it appears in inventory
 
-### ❌ **Add Item Validation Tests** (`inventory-add-validation.feature`)
+### ❌ **Add Item Validation Tests** (`inventoryAddValidation.feature`)
 - **Duplicate item rejection**: Ensures API rejects duplicate IDs
 - **Missing field validation**: Tests all required fields (ID, name, price, image)
 - **Comprehensive error handling**: Covers all validation scenarios
@@ -72,9 +71,9 @@ var config = {
 
 | File | Purpose | Content |
 |------|---------|---------|
-| `add-success-test-data.json` | Success scenarios | Valid item template for addition |
-| `add-validation-test-data.json` | Error scenarios | Duplicate items, incomplete data |
-| `retrieval-test-data.json` | Retrieval tests | Expected item data, filter parameters |
+| `addSuccessTestData.json` | Success scenarios | Valid item template for addition |
+| `addValidationTestData.json` | Error scenarios | Duplicate items, incomplete data |
+| `retrievalTestData.json` | Retrieval tests | Expected item data, filter parameters |
 
 ## Quick Start
 
@@ -168,7 +167,7 @@ karate.configure('readTimeout', 60000);
 **❌ Test data not found**:
 ```bash
 # Verify test data files exist
-ls -la src/test/resources/test-data/
+ls -la src/test/resources/testData/
 ```
 
 **❌ Build issues**:
@@ -187,7 +186,7 @@ mvn test
 ## Contributing
 
 1. **Add new scenarios** to appropriate feature files in `src/test/resources/features/`
-2. **Update test data** in `src/test/resources/test-data/` JSON files
+2. **Update test data** in `src/test/resources/testData/` JSON files
 3. **Run tests**: `mvn clean test`
 4. **Verify all tests pass** before committing
 5. **Update documentation** if adding new test categories
