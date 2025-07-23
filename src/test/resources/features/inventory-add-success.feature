@@ -5,7 +5,7 @@ Feature: Inventory API - Add Item Success Cases
     * configure headers = { 'Content-Type': 'application/json' }
     * def testData = read('classpath:test-data/add-success-test-data.json')
 
-  Scenario: Add item with random id and verify it's retrievable
+  Scenario: 1. Add item with random id and verify it's retrievable
     * def randomId = Math.floor(Math.random() * 9990) + 10 + ''
     * set testData.newItem.id = randomId
     * def dataToAdd = testData.newItem
@@ -19,7 +19,7 @@ Feature: Inventory API - Add Item Success Cases
     Then status 200
     * karate.log('Successfully added item with ID:', dataToAdd.id)
 
-    # Step 2: Verify the item can be retrieved
+    # Scenario 6 : Verify the item can be retrieved
     Given path '/api/inventory'
     When method GET
     Then status 200

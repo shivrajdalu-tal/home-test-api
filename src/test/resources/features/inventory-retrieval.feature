@@ -11,6 +11,7 @@ Feature: Inventory API - Retrieval Operations
     Then status 200
     And match response.data == '#array'
     And match each response.data[*] contains { id: '#present', name: '#present', price: '#present', image: '#present' }
+    And assert response.data.length >= 9
     * karate.log('Retrieved inventory items, total count:', response.data.length)
 
   Scenario: Filter by specific ID

@@ -1,11 +1,8 @@
 {
-  "expectedItem": {
-    "id": "1",
-    "name": "Classic Muzzarella",
-    "image": "classic.png",
-    "price": "$8"
-  },
+  "expectedItem":
+  {"id":"3","name":"Baked Rolls x 8","image":"roll.png","price":"$10"},
+
   "filters": {
-    "byId": "1"
+    "byId": "3"
   }
 } 
