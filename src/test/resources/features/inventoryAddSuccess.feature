@@ -3,7 +3,7 @@ Feature: Inventory API - Add Item Success Cases
   Background:
     * url baseUrl
     * configure headers = { 'Content-Type': 'application/json' }
-    * def itemData = callonce read('classpath:features/shared/new-item-generator.feature')
+    * def itemData = callonce read('classpath:features/commonFeatures/InventoryAddSuccess.feature')
     * def dataToAdd = itemData.dataToAdd
 
   Scenario: 3. Add item for non existent id
